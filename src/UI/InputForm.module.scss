@@ -1,0 +1,28 @@
+.label{
+  display: block;
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 1;
+  height: 16px;
+} 
+.input{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 16px;
+  margin-block: 8px;
+  font-size: 16px;
+  height: 56px;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+.warning{
+  display: flex;
+  align-items: center;
+  height: 16px;
+  padding-left: 16px;
+  font-size: 10px;
+  line-height: 1;
+  color: indianred;
+}
