@@ -1,4 +1,5 @@
 import React from 'react'
+import style from './pageStyle.module.scss'
 import useProfileMemberStore from '../store/useProfileMemberStore'
 import useReferencesStore from '../store/useReferencesStore'
 import useActiveEventStore from '../store/useActiveEventStore'
@@ -21,22 +22,38 @@ function MemberPage() {
   console.log(time)
 
   return (
-    <>
-      <div>MemberPage</div>
+    <div className={style.layout}>
+      <div className={style.member}>
 
-      <div>{member.nickname}</div>
-      <div>{memberClass}</div>
-      <div>{memberRole}</div> 
-      <div>{`ПА: ${member.pa}`}</div>
-      <div>{`ПЗ: ${member.pz}`}</div>
-      <div>{`БД: ${member.fs}`}</div>
+        <div className={style.member_info}>
+          <div className={style.member_image}>
+            <img src="https://placehold.co/150x150/191C1C/191C1C" alt="" />
+          </div>
+          <div className={style.member_description}>
+            <span className={style.member_icon}></span>
+            <span className={style.member_nickname}>{member.nickname}</span>
+          </div>
+          <div className={style.member_role}>{memberRole} клана</div>
+        </div>
+        
+        <div className={style.member_stats}>
+          <div className={style.stat_block}>
+            <div className={style.stat_value}>{member.pa}</div>
+            <div className={style.stat_name}>Показатель атаки</div>
+          </div>
+          <div className={style.stat_block}>
+            <div className={style.stat_value}>{member.pz}</div>
+            <div className={style.stat_name}>Показатель защиты</div>
+          </div>
+          <div className={style.stat_block}>
+            <div className={style.stat_value}>{member.fs}</div>
+            <div className={style.stat_name}>Боевой дух</div>
+          </div>
+        </div>
 
-      <div className="card_event">
-        <div>{activeEvents[0].event_name}</div>
-        <div>{date}</div>
-        <div>{time}</div>
+        <div className={style.member_edit}></div>
       </div>
-    </>
+    </div>
   )
 }
 
