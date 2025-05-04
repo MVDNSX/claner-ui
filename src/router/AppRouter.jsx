@@ -6,14 +6,17 @@ import ErrorPage from '../pages/ErrorPage'
 
 
 const AppRouter = ({route}) => {
+  console.log(route)
   return (
     <BrowserRouter>
       <Routes>
-        {route === 'join' && <Route path='*' element={<JoinPage/>}/>}
-        {route === 'member' && <Route path='*' element={<MemberPage/>}/>}
-        {route === 'officer' && <Route path='*' element={<OfficerPage/>}/>}
-        {route === 'error' && <Route path='*' element={<ErrorPage/>}/>}
+        {route === 'join' && <Route path='/' element={<JoinPage/>}/>}
+        {route === 'member' && <Route path='/' element={<MemberPage/>}/>}
+        {route === 'officer' && <Route path='/' element={<OfficerPage/>}/>}
+        {route === 'error' && <Route path='/' element={<ErrorPage/>}/>}
       </Routes>
     </BrowserRouter>
   )
 }
+
+export default AppRouter
