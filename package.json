@@ -11,10 +11,18 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
+    "@react-spring/web": "^9.7.5",
+    "@use-gesture/react": "^10.3.1",
+    "cupertino-pane": "^1.4.22",
+    "motion": "^12.10.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",
+    "react-icons": "^5.5.0",
+    "react-modal-sheet": "^4.4.0",
     "react-router-dom": "^7.5.3",
+    "react-spring-bottom-sheet": "^3.4.1",
+    "scroll-into-view-if-needed": "^3.1.0",
     "yup": "^1.6.1",
     "zustand": "^5.0.4"
   },

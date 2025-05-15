@@ -1,0 +1,18 @@
+button{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-inline: 18px;
+    height: 52px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-size: 16px;
+    color: var(--color-text);
+    background: var(--color-accent);
+  }
+  .bordered{
+    background: transparent;
+    border: 1px solid var(--color-accent);
+  }

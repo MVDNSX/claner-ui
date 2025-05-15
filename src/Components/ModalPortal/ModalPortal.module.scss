@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+/* handle — полоска для визуального хвата */
+.handle {
+  display: flex;
+  justify-content: center;
+  padding-block: 15px 30px;
+  touch-action: none;
+
+  .line {
+    width: 70px;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--color-accent);
+  }
+}
+
+/* content — прокручиваемая часть */
+.content {
+  padding-inline: 15px;
+}

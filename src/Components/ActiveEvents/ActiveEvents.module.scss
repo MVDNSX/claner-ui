@@ -1,0 +1,24 @@
+.active_events{
+  width: calc(100% + 30px);
+  margin-inline: -15px;
+  .heading{
+    color: var(--color-text);
+    padding-left: 15px;
+  }
+  .events_wrap{
+    width: 100%;
+    display: flex;
+    column-gap: 15px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding-left: 15px; /* Добавляем паддинг слева */
+    padding-right: 15px;
+    scroll-padding-right: 15px;
+    -ms-overflow-style: none; // IE и Edge
+    scrollbar-width: none; // Firefox
+
+    &::-webkit-scrollbar {
+      display: none; // Chrome, Safari
+    }
+  }
+}

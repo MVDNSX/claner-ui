@@ -1,10 +1,10 @@
-import {useForm} from 'react-hook-form'
-import {yupResolver} from '@hookform/resolvers/yup'
-import {formSchema} from '../../Validator/formSchema'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from 'react-hook-form'
+import { formSchema } from '../../Validator/formSchema'
 
-import InputForm from '../../UI/InputForm'
-import style from './EntryFrom.module.scss'
 import { useEffect } from 'react'
+import InputForm from '../../UI/CustomInput/CustomInput'
+import style from './EntryFrom.module.scss'
 
 const EntryForm = () => {
 

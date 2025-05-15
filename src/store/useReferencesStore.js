@@ -11,7 +11,7 @@ const useReferencesStore = create((set, get) => ({
   },
   getClassName: (id) => {
     const classes = get().classes
-    return classes.find((c) => c.id === id).class_name || 'Класс не найден'
+    return classes.find((c) => c.id === id)
   }
 }))
 
