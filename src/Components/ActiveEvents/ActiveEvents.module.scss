@@ -1,19 +1,27 @@
 .active_events{
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
   width: calc(100% + 30px);
   margin-inline: -15px;
+  overflow: hidden;
   .heading{
+    font-size: 20px;
+    flex: 0 0;
+    margin: 0;
     color: var(--color-text);
     padding-left: 15px;
+    margin-bottom: 10px;
   }
   .events_wrap{
-    width: 100%;
+    flex: 1 0;
     display: flex;
     column-gap: 15px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     padding-left: 15px; /* Добавляем паддинг слева */
     padding-right: 15px;
-    scroll-padding-right: 15px;
+    scroll-padding-left: 15px;
     -ms-overflow-style: none; // IE и Edge
     scrollbar-width: none; // Firefox
 

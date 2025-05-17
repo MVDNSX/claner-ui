@@ -6,7 +6,6 @@ import ErrorPage from '../pages/ErrorPage'
 
 
 const AppRouter = ({route}) => {
-  console.log(route)
   return (
     <BrowserRouter>
       <Routes>

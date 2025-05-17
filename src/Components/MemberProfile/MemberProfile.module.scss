@@ -1,77 +1,71 @@
 .member{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 25px;
-
+  flex: 1 0;
+  max-height: 40%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 1fr 44px;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
   padding: 15px;
   border-radius: 30px;
   background-color: var(--color-bg-content);
   border:1px solid var(--color-border-content);
   color: var(--color-text);
   position: relative;
+} 
+
+.main {
+  display: flex;
+  column-gap: 30px;
 }
 
-.member_info{
+.left{
+    width: 50%;
+  }
+
+.avatar{
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 15px;
+}
+
+.right{
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  
-
-  .member_image{
-    display: flex;
-    justify-content: center;
-    img{
-      display: block;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 2px solid var(--color-accent);
-    }
-  }
-
-  .member_description{
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    .member_nickname{
-      font-size: 24px;
-    }
-    .member_icon{
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      img{
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-    }
-  }
-
-  .member_role{
-    font-size: 16px;
-  }
-
 }
 
+.description{
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  margin-bottom: 15px;
+  .icon{
+    display: block;
+    width: 20px;
+    aspect-ratio: 1;
+  }
+  .nickname{
+    font-size: 24px;
+  }
+}
 
-.member_stats{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
+.parameters{
+display: flex;
+flex-direction: column;
+row-gap: 10px;
+color: var(--color-accent);
+  .parameter{
 
-  .stat_block{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .stat_value{
-      font-size: 24px;
-    }
-    .stat_name{
+    .title{
       font-size: 12px;
+    }
+    .value{
+      font-size: 16px;
     }
   }
 }

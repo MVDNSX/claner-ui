@@ -1,4 +1,4 @@
-import React from 'react'
+
 import style from './CustomButton.module.scss'
 
 function CustomButton({text, border, ...props}) {
