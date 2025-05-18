@@ -18,9 +18,9 @@ export default function Modal({ children }) {
 
   const backdropRef = useSpringRef()
   const transitions = useTransition(isOpen, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    from: { opacity: 0, backdropFilter: 'blur(0px)' },
+    enter: { opacity: 1, backdropFilter: 'blur(4px)' },
+    leave: { opacity: 0, backdropFilter: 'blur(0px)' },
     config: { duration: 150 },
   })
 

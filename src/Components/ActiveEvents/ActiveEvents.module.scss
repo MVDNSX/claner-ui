@@ -6,7 +6,7 @@
   margin-inline: -15px;
   overflow: hidden;
   .heading{
-    font-size: 20px;
+    font-size: var(--font-size-lg20);
     flex: 0 0;
     margin: 0;
     color: var(--color-text);
@@ -19,9 +19,8 @@
     column-gap: 15px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    padding-left: 15px; /* Добавляем паддинг слева */
-    padding-right: 15px;
-    scroll-padding-left: 15px;
+    padding-inline: var(--base-padding); /* Добавляем паддинг слева */
+    scroll-padding-left: var(--base-padding);
     -ms-overflow-style: none; // IE и Edge
     scrollbar-width: none; // Firefox
 

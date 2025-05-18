@@ -1,9 +1,10 @@
 .card{
+  max-height: max-content;
   min-width: calc(100% - 15px);
   border: 1px solid red;
   scroll-snap-align: start;
-  padding: 15px;
-  border-radius: 30px;
+  padding:var(--base-padding);
+  border-radius: var(--border-radius-md);
   background-color: var(--color-bg-content);
   border:1px solid var(--color-border-content);
   color: var(--color-text);
@@ -21,16 +22,16 @@
   .label_wrap{
     display: flex;
     column-gap: 15px;
-    padding-block: 15px;
+    padding-block: var(--base-padding);
   }
   .label{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 26px;
-    font-size: 12px;
+    font-size: var(--font-size-sm12);
     padding-inline: 10px;
-    border-radius: 15px;
+    border-radius: var(--border-radius-sm);
     background: #5C57B5;
   }
 

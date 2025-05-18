@@ -1,18 +1,35 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('./assets/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* Диапазон весов */
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-base: 'Nunito', sans-serif;
+  --font-size-base16: 16px;
+  --font-size-sm12: 12px;
+  --font-size-lg20: 20px;
   
   --color-bg:#10131A;
   --color-bg-content: #181C23;
   --color-border-content: #1d2128;
-  --color-text:#fff;
-  --color-accent:#5C57B5;
-  --color-label: #5c57b5;
-  --color-secondary-accent: #ccc;
 
-  --cupertino-pane-background:#10131A; 
-  --cupertino-pane-border-radius: 45px;
-  --cupertino-pane-destroy-button-background: #10131A; /* Цвет фона кнопки закрытия */
-  --cupertino-pane-icon-close-color: #5C57B5; 
+  --color-text:#fff;
+  
+  --color-accent:#5C57B5;
+  --color-secondary-accent: #A5B4FC;
+  --color-error: #cd5c5c;
+
+  --base-padding: 15px;
+
+  --border-radius-sm: 15px;
+  --border-radius-md: 30px;
+  --border-radius-lg: 45px;
+
+
 }
 
 

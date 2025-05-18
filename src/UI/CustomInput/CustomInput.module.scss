@@ -1,7 +1,6 @@
 .label{
   display: block;
-  padding-left: 16px;
-  font-size: 14px;
+  padding-left: var(--base-padding);
   line-height: 1;
   height: 16px;
   color: var(--color-label)
@@ -10,11 +9,10 @@
   display: block;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 16px;
+  padding: 0 var(--base-padding);
   margin-block: 8px;
-  font-size: 16px;
   height: 56px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-sm);
   color: inherit;
   outline: none;
   -webkit-appearance: none;
@@ -30,8 +28,8 @@
   display: flex;
   align-items: center;
   height: 16px;
-  padding-left: 16px;
+  padding-left: var(--base-padding);
   font-size: 10px;
   line-height: 1;
-  color: indianred;
+  color: var(--color-error);
 }
