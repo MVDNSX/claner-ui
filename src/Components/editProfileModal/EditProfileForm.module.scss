@@ -1,0 +1,42 @@
+.profile_form{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content{
+  flex: 1 1;
+  overflow: scroll;
+  -ms-overflow-style: none;
+    scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  color: var(--color-secondary-accent);
+  input {
+
+    color: var(--color-text);
+  }
+}
+
+.classes{
+}
+
+.heading{
+  padding-left: var(--base-padding);
+  margin-bottom: var(--base-padding);
+}
+
+.group{
+  display: grid;
+  gap: var(--base-padding);
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+}
+
+
+.control{
+  flex: 0 0;
+  padding-top: var(--base-padding);
+  padding-bottom: 20px;
+}

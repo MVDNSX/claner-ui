@@ -1,20 +1,19 @@
-import scrollIntoView from 'scroll-into-view-if-needed';
 import { useSpring,config, animated, useTransition, useSpringRef, useChain } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
 import useGlobalStore from '../../store/useGlobalStore'
 import style from './Modal.module.scss'
-import { useEffect, useRef, useState } from 'react'
-import CustomInput from '../../UI/CustomInput/CustomInput'
-import CustomButton from '../../UI/CustomButton/CustomButton'
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
+import EditProfileForm from '../editProfileModal/EditProfileForm'
 
 export default function Modal({ children }) {
-
   const [vv, setVV] = useState(window.visualViewport?.height ?? 0);
-  const currentInputRef = useRef();
-  const scrollContainerRef = useRef()
+  
 
   const isOpen = useGlobalStore(state => state.isModalOpen)
   const onClose = useGlobalStore(state => state.closeModal)
+  const modalContent = useGlobalStore(state => state.modalContent)
+
 
   const backdropRef = useSpringRef()
   const transitions = useTransition(isOpen, {
@@ -36,12 +35,6 @@ export default function Modal({ children }) {
     )
   
   useChain(isOpen ? [backdropRef, modalRef] : [modalRef, backdropRef], [0, 0.15])
-
-  const handleClose=(e)=>{
-    e.stopPropagation()
-    onClose()
-  }
-
 
   
   const bind = useDrag(
@@ -77,17 +70,6 @@ export default function Modal({ children }) {
   }
   )
 
-
-
-  const handleInputFocus = (e) => {
-    currentInputRef.current = e.target;
-      scrollIntoView(currentInputRef.current, {
-      behavior: 'smooth',
-      block: 'center',
-      boundary: scrollContainerRef.current
-    })
-  };
-
   useEffect(() => {
     const viewport = window.visualViewport;
     let prevHeight = viewport.height;
@@ -106,11 +88,6 @@ export default function Modal({ children }) {
 
       setVV(currentHeight);
       prevHeight = currentHeight;
-      scrollIntoView(currentInputRef.current, {
-        behavior: 'smooth',
-        block: 'center',
-        boundary: scrollContainerRef.current
-      })
     };
 
     viewport.addEventListener('resize', handleResize);
@@ -120,26 +97,41 @@ export default function Modal({ children }) {
     };
   }, []);
 
-  return transitions((backdropStyle, opened) => (
-    opened && <animated.div className={style.wrapper_modal} style={backdropStyle} onClick={onClose}>
-      <animated.div className={style.modal} style={{ height: modalStyle.height.to(h => `${h}%`), transform: modalStyle.y.to(y => `translateY(${y}px)`) }} onClick={(e) => e.stopPropagation()}>
+  return createPortal(
+    transitions((backdropStyle, opened) =>
+      opened && (
+        <animated.div
+          className={style.wrapper_modal}
+          style={{
+            ...backdropStyle,
+            position: 'absolute',
+            inset: 0,
+            zIndex: 9999
+          }}
+          onClick={onClose}
+        >
+          <animated.div
+            className={style.modal}
+            style={{
+              height: modalStyle.height.to(h => `${h}%`),
+              transform: modalStyle.y.to(y => `translateY(${y}px)`),
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0
+            }}
+            onClick={e => e.stopPropagation()}
+          >
             <div className={style.line} {...bind()}>
               <span></span>
             </div>
-            <div ref={scrollContainerRef} className={style.content}>
-              <CustomInput label="Ник:" onFocus={handleInputFocus} />
-              <CustomInput label="Показатель атаки:" onFocus={handleInputFocus} />
-              <CustomInput label="Показатель защиты:" onFocus={handleInputFocus} />
-              <CustomInput label="Боевой дух:" onFocus={handleInputFocus} />
-              <CustomInput label="Класс:" onFocus={handleInputFocus} />
-              <CustomInput label="6" onFocus={handleInputFocus} />
-              <CustomInput label="7" onFocus={handleInputFocus} />
-              <CustomInput label="8" onFocus={handleInputFocus} />
-            </div>
-            <div className={style.controls}>
-              <CustomButton text="Отправить" onClick={handleClose} />
+            <div className={style.content}>
+               {modalContent}
             </div>
           </animated.div>
-    </animated.div>
-  ))
+        </animated.div>
+      )
+    ),
+    document.getElementById('modal-root')
+  )
 }

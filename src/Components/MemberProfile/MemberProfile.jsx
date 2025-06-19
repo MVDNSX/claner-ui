@@ -1,32 +1,29 @@
-import React from 'react'
-import style from './MemberProfile.module.scss'
-import useReferencesStore from '../../store/useReferencesStore'
-import useProfileMemberStore from '../../store/useProfileMemberStore'
-import ModalPortal from '../Modal/Modal'
+import { useTelegram } from '../../hooks/useTelegram'
 import useGlobalStore from '../../store/useGlobalStore'
-import { FaUserEdit } from "react-icons/fa";
-import EditProfile from '../editProfileModal/EditProfileModal'
+import useProfileMemberStore from '../../store/useProfileMemberStore'
+import useReferencesStore from '../../store/useReferenceStore'
 import CustomButton from '../../UI/CustomButton/CustomButton'
+import EditProfileForm from '../editProfileModal/EditProfileForm'
+import style from './MemberProfile.module.scss'
 
 export default function MemberProfile() {
 
-  const member = useProfileMemberStore((state) => state.member)
-  const getClassName = useReferencesStore(state => state.getClassName)
-  const memberClass = getClassName(member.class_id)
-
   const openModal = useGlobalStore((state)=>state.openModal)
+  const member = useProfileMemberStore((state) => state.member)
+  const classIcon = useReferencesStore(state => state.getClassIcon(member.class_id))
+  const {avatar} = useTelegram()
 
   return (
     <div className={style.member}>
 
       <div className={style.main}>
         <div className={style.left}>
-          <img className={style.avatar} src="https://placehold.co/300x300/10131A/10131A" alt="" />
+          <img className={style.avatar} src={avatar ? avatar : 'https://placehold.co/300x300/10131A/10131A'} alt="" />
         </div>
         <div className={style.right}>
           <div className={style.description}>
             <span className={style.nickname}>{member.nickname}</span>
-            <img className={style.icon} src={`https://clanner-server.onrender.com${memberClass.icon_url}`} alt="" />  
+            <img className={style.icon} src={`https://clanner-server.onrender.com${classIcon}`} alt="" />  
           </div>
 
           <div className={style.parameters}>
@@ -47,7 +44,7 @@ export default function MemberProfile() {
       </div>
 
       <div className={style.controls}>
-        <CustomButton onClick={openModal} text='Обновить'/>
+        <CustomButton onClick={()=>{openModal(<EditProfileForm/>)}} text='Обновить данные'/>
       </div>
     </div>
   )

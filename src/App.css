@@ -35,6 +35,13 @@ button {
   cursor: pointer;
 }
 
+input[type='number']{
+  -moz-appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button{
+  display: none;
+}
 /* Изображения — чтобы не выходили за контейнер */
 img {
   max-width: 100%;
@@ -43,12 +50,32 @@ img {
 }
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: var(--font-base);
-  font-size: var(--font-base);
-  margin: 0;
-  padding: 0;
+  font-size: var(--font-size-base16);
   background: var(--color-bg);
   color: var(--color-text);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#root{
+  height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#root::-webkit-scrollbar {
+  display: none;
 }

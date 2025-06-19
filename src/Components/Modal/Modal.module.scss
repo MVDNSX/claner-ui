@@ -23,7 +23,7 @@
 }
 
 .line{
-  flex-shrink: 0;
+  flex: 0 0 ;
   display: flex;
   justify-content: center;
   padding-top: 15px;
@@ -43,19 +43,6 @@
 }
 
 .content{
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-  min-height: 210px;
-  height: 100%;
-  -ms-overflow-style: none;
-    scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-.controls{
-  flex-shrink: 0;
-  padding-block: var(--base-padding);
+  flex: 1 0;
+  overflow: hidden;
 }

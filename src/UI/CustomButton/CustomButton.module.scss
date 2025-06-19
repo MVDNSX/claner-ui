@@ -11,8 +11,30 @@ button{
     font-size: 16px;
     color: var(--color-text);
     background: var(--color-accent);
+    transition: 0.2s ease background;
   }
   .bordered{
     background: transparent;
     border: 1px solid var(--color-accent);
   }
+
+  .disabled{
+    background: var(--color-bg-content);
+  }
+
+  .loader{
+    height: 80%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: conic-gradient(transparent, white);
+    mask-image: radial-gradient(circle at center,transparent 50%, black 50%);
+    -webkit-mask-image: radial-gradient(circle at center,transparent 50%, black 50%);
+    animation: spin 0.8s linear infinite;
+    
+  }
+
+ @keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}

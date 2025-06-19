@@ -1,10 +1,17 @@
 .layout{
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
-  width: 100vw;
-  height: 100vh;
-  padding: 15px;
-  overflow: hidden;
-  position: relative;
+  row-gap: 20px;
+  padding-top: 100px;
+  padding-bottom: 34px;
+  padding-inline: 15px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  } 
+}
+
+.cards_wrap{
 }

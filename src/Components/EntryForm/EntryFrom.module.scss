@@ -1,5 +1,15 @@
+.join_form{
+  height: 100%;
+}
+
+.content{
+ 
+}
+
 .stats{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 16px;
+  display: flex;
+  column-gap: 15px;
+}
+
+.control{
 }

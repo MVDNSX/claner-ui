@@ -1,0 +1,23 @@
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.title{
+  font-size: 50px; /* или text-6xl в tailwind */
+  font-weight: bold;
+background-image: linear-gradient(
+  90deg,
+  var(--color-accent) 0%,
+  var(--color-accent) 10%,
+  var(--color-bg) 30%,
+  var(--color-bg) 70%,
+  var(--color-accent) 90%,
+  var(--color-accent) 100%
+);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

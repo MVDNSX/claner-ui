@@ -1,0 +1,35 @@
+.radio_wrap{
+  flex-shrink: 0;
+  display: flex;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--color-bg-content);
+  border: 1px solid var(--color-border-content);
+  border-radius: var(--border-radius-sm);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.2s ease border-color;
+}
+
+.current{
+  order: -1;
+  border: 2px solid var(--color-accent);
+}
+.radio{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.icon{
+  width: 30px;
+  height: 30px;
+}
+
+.radio_wrap:has(.radio:checked){
+  border: 2px solid var(--color-secondary-accent);
+}

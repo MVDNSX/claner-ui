@@ -1,0 +1,28 @@
+.list_item{
+  flex-shrink: 0;
+  background: var(--color-bg-content);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 50px;
+  border: var(--color-border-content);
+  border-radius: var(--border-radius-sm);
+  padding-inline: var(--base-padding);
+}
+.icon{
+  height: 30px;
+  width: 30px;
+}
+.nick{
+  font-size: var(--font-size-lg20);
+}
+
+.leader{
+margin-left: auto;
+width: 30px;
+height: 30px;
+}
+
+.top{
+  order: -1;
+}
